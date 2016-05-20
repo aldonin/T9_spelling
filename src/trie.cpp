@@ -7,14 +7,10 @@ Trie::Trie() : ITrie()
 
 }
 
-Trie::~Trie()
-{
-}
-
-std::string Trie::find(std::string prefix)
+std::vector<std::string> Trie::find(std::string prefix)
 {
     Q_UNUSED(prefix)
-    return std::string();
+    return {"plug"};
 }
 
 bool Trie::insert(std::string word)
