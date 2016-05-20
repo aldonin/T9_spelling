@@ -10,9 +10,12 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    node.cpp
+    node.cpp \
+    trie.cpp \
+    itrie.cpp
 
 HEADERS += \
     itrie.h \
-    node.h
+    node.h \
+    trie.h
 
