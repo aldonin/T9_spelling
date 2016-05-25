@@ -17,6 +17,7 @@ public:
     char data() const;
     void setEnd(const bool isEnd);
     bool isEnd() const;
+    std::map<char, Node*>& children();
 
 private:
     std::map<char, Node*> m_children;

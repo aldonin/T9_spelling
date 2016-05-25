@@ -5,7 +5,7 @@
 ITrie::ITrie() :
     m_size(0),
     m_nodes(1),
-    m_maxSuggestion(3),
+    m_maxSuggestion(5),
     m_root(new Node('0'))
 {
 
@@ -13,7 +13,6 @@ ITrie::ITrie() :
 
 ITrie::~ITrie()
 {
-    qDebug() << Q_FUNC_INFO;
     m_size = 0;
     delete m_root;
     m_root = Q_NULLPTR;

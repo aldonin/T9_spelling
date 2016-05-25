@@ -9,7 +9,7 @@ Node::Node(const char content) :
 
 Node::~Node()
 {
-    qDebug() << "~Node(" << m_data << ")";
+    //qDebug() << "~Node(" << m_data << ")";
     for (auto &it : m_children) {
         delete it.second;
     }
@@ -52,4 +52,9 @@ void Node::setEnd(const bool isEnd)
 bool Node::isEnd() const
 {
     return m_isEnd;
+}
+
+std::map<char, Node *>& Node::children()
+{
+    return m_children;
 }

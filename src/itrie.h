@@ -12,7 +12,7 @@ public:
     virtual ~ITrie();
 
     virtual bool insert(std::string word) = 0;
-    virtual std::vector<std::string> find(std::string prefix) = 0;
+    virtual std::vector<std::string> find(std::string prefix) const = 0;
 
     size_t size() const;
     size_t nodes() const;
