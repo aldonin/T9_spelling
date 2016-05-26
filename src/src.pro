@@ -17,5 +17,6 @@ SOURCES += main.cpp \
 HEADERS += \
     itrie.h \
     node.h \
-    trie.h
+    trie.h \
+    utils.h
 
