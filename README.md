@@ -55,7 +55,7 @@ One of the possible way to fill trie is using dictionary. The examples of dictio
 After the trie is fiiled we could check the number of words in the trie or number of nodes required for representation the dictionary:
 ```c++
 std::cout << "The size of trie is " << trie->size();
-std::cout << << "The nodes require for trie is " << t->nodes();
+std::cout << "The nodes require for trie is " << trie->nodes();
 ```
 
 For finding the word with specified prefix use:
