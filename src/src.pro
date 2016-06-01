@@ -1,16 +1,12 @@
 QT += core
 QT -= gui
 
-CONFIG += c++11
+TARGET = Trie
 
-TARGET = T9
-CONFIG += console
-CONFIG -= app_bundle
+TEMPLATE = lib
+CONFIG += staticlib c++11
 
-TEMPLATE = app
-
-SOURCES += main.cpp \
-    node.cpp \
+SOURCES += node.cpp \
     trie.cpp \
     itrie.cpp
 
@@ -18,5 +14,4 @@ HEADERS += \
     itrie.h \
     node.h \
     trie.h \
-    utils.h
 

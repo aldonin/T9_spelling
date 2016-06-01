@@ -14,6 +14,7 @@ ITrie::ITrie() :
 ITrie::~ITrie()
 {
     m_size = 0;
+    m_nodes = 0;
     delete m_root;
     m_root = Q_NULLPTR;
 }

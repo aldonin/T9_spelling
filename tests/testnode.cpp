@@ -1,27 +1,13 @@
-#include <QString>
-#include <QtTest>
+#include <QTest>
+#include "testnode.h"
 #include "node.h"
 
 
-class TestNode : public QObject
+TestNode::TestNode(QObject *parent) : QObject(parent)
 {
-    Q_OBJECT
 
-public:
-    TestNode();
-
-private Q_SLOTS:
-    void initTestCase();
-    void cleanupTestCase();
-    void modifiedEndMarkCase();
-    void eraseCase();
-private:
-    Node *root;
-};
-
-TestNode::TestNode()
-{
 }
+
 
 void TestNode::initTestCase()
 {
@@ -33,9 +19,10 @@ void TestNode::initTestCase()
 void TestNode::cleanupTestCase()
 {
     delete root;
+    root = Q_NULLPTR;
 }
 
-void TestNode::modifiedEndMarkCase()
+void TestNode::modifiedEndMarkTestCase()
 {
     QVERIFY2(root->isEnd() == false, "Setting default mark of the end is incorrect");
     root->setEnd(true);
@@ -44,7 +31,20 @@ void TestNode::modifiedEndMarkCase()
     QVERIFY2(root->isEnd() == false, "Setting default mark of the end is incorrect");
 }
 
-void TestNode::eraseCase()
+void TestNode::findTestCase()
+{
+    root->append(new Node('x'));
+    root->append(new Node('y'));
+
+    QVERIFY2(root->find('x') != Q_NULLPTR, "Can't find appended node");
+    QVERIFY2(root->find('y') != Q_NULLPTR, "Can't find appended node");
+    QVERIFY2(root->find('z') == Q_NULLPTR, "Finded node which are not actually in the root");
+
+    root->erase('x');
+    root->erase('y');
+}
+
+void TestNode::eraseTestCase()
 {
     Node *child = new Node('b');
     child->append(new Node('c'));
@@ -53,10 +53,4 @@ void TestNode::eraseCase()
     QCOMPARE(root->erase('c'), false);
     QCOMPARE(root->erase('b'), true);
     QCOMPARE(root->erase('b'), false);
-
 }
-
-
-QTEST_APPLESS_MAIN(TestNode)
-
-#include "tst_testnode.moc"
