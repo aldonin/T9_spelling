@@ -5,6 +5,7 @@ The implementation based on [Trie](https://en.wikipedia.org/wiki/Trie) data stru
 Each [`Node`](https://github.com/aldonin/T9_spelling/blob/master/src/node.h) contain `isEnd` flag which shows if there is a separate word which stops on currect character.
 
 For example: 
+
 ![alt text](https://github.com/aldonin/T9_spelling/blob/master/img/trie.png "Trie example")
 
 Nodes with `isEnd` flag is marked with double round. We see 13 nodes(including empty root node), which represent 5 names:
