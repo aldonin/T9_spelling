@@ -65,4 +65,9 @@ for (auto str : v) {
     std::cout << str << std::endl;
 }
 ```
+You could also limit the number of words which will be suggested:
+```c++
+trie->setNumberOfSuggestions(3);
+```
+Using this approach the maximum size of `std::vector` after calling `Trie::find` will be 3.
 
